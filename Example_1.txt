@@ -1,0 +1,29 @@
+//Example-1 ADD three numbers 10, 20, 30 stored in processor register.
+//So, to solve this we will do following steps:
+//• Initialize R1 with 10.
+//• Initialize R2 with 20.
+//• Initialize R3 with 30.
+//• Add R1 and R2 and store in R4 and then add R3 and R4 and strore the final result in R5.
+
+initial							// Example-1
+		begin
+			for (k=0; k<31; k=k+1)
+			
+				Reg[k] = k;
+				
+				Mem[0] = 32'h2801000a;			// ADDI   R1,R0,10
+				Mem[1] = 32'h28020014;			// ADDI   R2,R0,20
+				Mem[2] = 32'h28030019;			// ADDI   R3,R0,25
+				Mem[3] = 32'h0ce77800;			// OR     R7,R7,R7  (dummy instruction)
+				Mem[4] = 32'h0ce77800;			// OR     R7,R7,R7
+				Mem[5] = 32'h00222000;			// ADD    R4,R1,R2
+				Mem[6] = 32'h0ce77800;			// OR     R7,R7,R7
+				Mem[7] = 32'h00832800;			// ADD    R5,R4,R3
+				Mem[8] = 32'hfc000000;			// HLT
+			
+				
+			HALTED = 0;
+			PC = 0;
+			TAKEN_BRANCH = 0;
+			
+		end
