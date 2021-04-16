@@ -9,6 +9,7 @@ Pipelining is an implementation technique whereby multiple instructions are over
 
 In all RISC architecture processor, the instruction is implemented by following 5 clocks/ stages:
 
+
 1. Instruction Fetch (IF): 
 
 • Here in this section, the PC is sent to memory and the current instruction is fetched and
