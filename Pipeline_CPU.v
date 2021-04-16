@@ -1,4 +1,4 @@
-module project_6 (clk1,clk2);
+module Pipeline_CPU (clk1,clk2);
 
 input clk1,clk2;					// Two phase clock
 
